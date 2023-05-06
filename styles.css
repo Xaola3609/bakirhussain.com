@@ -301,6 +301,7 @@ p {
 	top: 50%;
 	left: 50%;
 	transition: all .4s ease-in-out;
+	color: var(--color-grey-5);
 	z-index: -1;
 	transform: translate(-50%, -50%);
 	font-weight: 800;
