@@ -258,7 +258,7 @@ p {
 .about-stats .progress-bars{
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
-	grid-gap: 2rem;
+	grid-gap: 1rem;
 }
 .about-stats .progress-bars .progress-bar{
 	display: flex;
