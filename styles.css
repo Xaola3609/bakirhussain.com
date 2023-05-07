@@ -429,7 +429,9 @@ transition: all 0.4s ease-in-out;
 	justify-content: center;
 }
 
-
+.timeline .timeline-item .tl-icon i{
+	font-size: 1.3rem;
+}
 
 
 
