@@ -253,7 +253,7 @@ p {
 
 
 .about-stats{
-	padding-bottom: 4rem;
+	padding-bottom: 1rem;
 }
 .about-stats .progress-bars{
 	display: grid;
@@ -270,7 +270,7 @@ p {
 }
 .about-stats .progress-bars .progress-bar .progress-con{
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
 }
 .about-stats .progress-bars .progress-bar .progress-con .prog-text{
 	color: var(--color-grey-2);
