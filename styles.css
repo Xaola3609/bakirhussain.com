@@ -289,7 +289,7 @@ p {
 .about-container .right-about{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 2rem;
+  grid-gap: 1rem;
 }
 
 .about-container .about-item{
@@ -307,14 +307,14 @@ p {
 }
 
 .about-container .abt-text{
-	padding: 1.5rem;
+	padding: 1rem;
 	display: flex;
 	flex-direction: column;
 
 }
 
 .about-container .large-text{
-	font-size: 3rem;
+	font-size: 2rem;
 	font-weight: 500;
 	color: var(--color-secondary);
 
@@ -322,10 +322,10 @@ p {
 
 
 .about-container .small-text{
-	padding-left: 3rem;
+	padding-left: 2rem;
 	position: relative;
 	text-transform: uppercase;
-	font-size: 1.2rem;
+	font-size: 1rem;
 	color: var(--color-grey-1);
 	letter-spacing: 2px;
 
