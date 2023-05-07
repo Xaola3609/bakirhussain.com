@@ -418,11 +418,11 @@ transition: all 0.4s ease-in-out;
 
 .timeline .timeline-item .tl-icon{
 	position: absolute;
-	left: -20px;
+	left: -27px;
 	top: 0;
 	background-color: var(--color-secondary);
-	width: 25px;
-	height: 25px;
+	width: 30px;
+	height: 30px;
 	border-radius: 50%;
 	display: flex;
 	align-items: center;
