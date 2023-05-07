@@ -237,7 +237,7 @@ p {
 }
 
 .about-container .left-about p{
-	line-height: 2rem;
+	line-height: 1rem;
 	padding: 1rem;
 	color: var(--color-grey-1);
 
@@ -254,7 +254,6 @@ p {
 
 .about-stats{
 	padding-bottom: 4rem;
-	line-height: 1;
 }
 
 
