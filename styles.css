@@ -271,7 +271,7 @@ transition: all 0.4s ease-in-out;
 	font-weight: 500;
 }
 .about-stats .progress-bars .progress-bar .progress-con{
-	display: flex;
+	display: grid;
 	align-items: center;
 }
 .about-stats .progress-bars .progress-bar .progress-con .prog-text{
