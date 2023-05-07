@@ -122,10 +122,12 @@ section {
 
 background-color: var(--color-secondary) !important;
 transition: all 0.4s ease-in-out;
-i {
+}
+
+.active-btn i {
 	color: var(--color-white) !important;
 }
-}
+
 
 .control{
 		padding: 1rem;
@@ -219,6 +221,22 @@ p {
 }
 
 
+
+
+.about-container{
+	display: grid;
+	grid-template-columns: repeat(2, 1fr); 
+	padding-top: 3.5rem;
+	padding-bottom: 5rem;
+}
+
+.about-container right-about {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 2rem;
+
+
+}
 
 
 
