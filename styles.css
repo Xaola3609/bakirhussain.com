@@ -240,7 +240,6 @@ transition: all 0.4s ease-in-out;
 }
 
 .about-container .left-about p{
-	line-height: 0;
 	padding: 1rem;
 	color: var(--color-grey-1);
 
@@ -295,7 +294,7 @@ transition: all 0.4s ease-in-out;
 	 background-color: var(--color-secondary);
 	 transition: all .4s ease-in-out;
 	 width: 50%;
-	 
+
 }
 
 
