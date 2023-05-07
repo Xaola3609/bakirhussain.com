@@ -267,13 +267,16 @@ p {
 .about-stats .progress-bars .progress-bar .prog-title{
 	text-transform: uppercase;
 	font-weight: 500;
+	line-height: 1;
 }
 .about-stats .progress-bars .progress-bar .progress-con{
 	display: flex;
 	align-items: center;
+	line-height: 1;
 }
 .about-stats .progress-bars .progress-bar .progress-con .prog-text{
 	color: var(--color-grey-2);
+	line-height: 0.8;
 }
 
 
