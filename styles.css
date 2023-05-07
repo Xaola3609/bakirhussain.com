@@ -268,9 +268,7 @@ p {
 	text-transform: uppercase;
 	font-weight: 500;
 }
-.about-stats .progress-bars .progress-bar .progress-con{
-	display: flex;
-}
+
 .about-stats .progress-bars .progress-bar .progress-con .prog-text{
 	color: var(--color-grey-2);
 }
