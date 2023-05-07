@@ -227,7 +227,7 @@ p {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   padding-top: 3.5rem;
-  padding-bottom: 5rem;
+  padding-bottom: 3rem;
 }
 
 
