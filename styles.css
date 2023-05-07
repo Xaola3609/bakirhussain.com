@@ -237,7 +237,7 @@ p {
 }
 
 .about-container .left-about p{
-	line-height: 1rem;
+	line-height: 0;
 	padding: 1rem;
 	color: var(--color-grey-1);
 
