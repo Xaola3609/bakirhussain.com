@@ -340,7 +340,7 @@ transition: all 0.4s ease-in-out;
 	top: 0%;
 	width: 40%;
 	height: 1px;
-	background-color: var(--color-grey-5);
+	background-color: var(--color-secondary);
 	transform: translateX(-50%);
 }
 
