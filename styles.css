@@ -410,14 +410,21 @@ transition: all 0.4s ease-in-out;
 	padding-bottom: 3rem;
 }
 
-.timeline h5 {
-	font: bold;
-}
-
 .timeline .timeline-item{
 	position: relative;
 	padding-left: 3rem;
 	border-left: 1px solid var(--color-grey-5);
+}
+
+.timeline .timeline-item .tl-icon{
+	position: absolute;
+	left: -27px;
+	top: 0;
+	background-color: var(--color-secondary);
+	width: 50%;
+	height: 50%;
+	border-radius: 50%;
+	
 }
 
 
