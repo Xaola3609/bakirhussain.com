@@ -259,7 +259,7 @@ transition: all 0.4s ease-in-out;
 }
 .about-stats .progress-bars{
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
+	grid-template-columns: repeat(4, 1fr) repeat(4, 1fr);
 	grid-gap: 2rem;
 }
 .about-stats .progress-bars .progress-bar{
@@ -307,7 +307,7 @@ transition: all 0.4s ease-in-out;
 	width: 10%;
 }
 .about-stats .progress-bars .progress-bar .progress-con .progress .Charisma{
-	width: 30%;
+	width: 20%;
 }
 .about-stats .progress-bars .progress-bar .progress-con .progress .Intelligence{
 	width: 20%;
