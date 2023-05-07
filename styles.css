@@ -416,22 +416,6 @@ transition: all 0.4s ease-in-out;
 	border-left: 1px solid var(--color-grey-5);
 }
 
-.timeline .timeline-item .tl-icon{
-	position: absolute;
-	left: -27px;
-	top: calc(50% - 12.5px);
-	background-color: var(--color-secondary);
-	width: 25px;
-	height: 25px;
-	border-radius: 50%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-.timeline .timeline-item .tl-icon i{
-	font-size: 1rem;
-}
-
 
 
 
