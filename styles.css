@@ -419,9 +419,8 @@ transition: all 0.4s ease-in-out;
 .timeline .timeline-item .tl-icon{
 	position: absolute;
 	left: -27px;
-	top: 50%;
+	top: calc(50% - 12.5px);
 	background-color: var(--color-secondary);
-	transform: translateY(-50%);
 	width: 25px;
 	height: 25px;
 	border-radius: 50%;
