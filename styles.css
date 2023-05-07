@@ -254,7 +254,6 @@ p {
 
 .about-stats{
 	padding-bottom: 4rem;
-
 }
 
 
@@ -262,7 +261,6 @@ p {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	grid-gap: 2rem;
-
 }
 
 
@@ -275,16 +273,12 @@ p {
 .about-stats .progress-bars .progress-bar .prog-title{
 	text-transform: uppercase;
 	font-family: 500;
-
-
 }
 
 
 .about-stats .progress-bars .progress-bar .progress-con{
 	display: flex;
 	align-items: center;
-
-
 }
 
 .about-stats .progress-bars .progress-bar .progress-con .prog-text{
