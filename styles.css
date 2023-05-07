@@ -250,7 +250,41 @@ p {
 	box-shadow: 1px 4px 15px rgba(0, 0, 0, .32);
 }
 
+.about-container .abt-text{
+	padding: 1.5rem;
+	display: flex;
+	flex-direction: column;
 
+}
+
+.about-container .large-text{
+	font-size: 3rem;
+	font-weight: 700;
+	color: var(--color-secondary);
+
+}
+
+
+.about-container .small-text{
+	padding-left: 3rem;
+	position: relative;
+	text-transform: uppercase;
+	font-size: 1.2rem;
+	color: var(--color-grey-1);
+	letter-spacing: 2px;
+
+}
+
+.about-container .small-text::before{
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 15px;
+	width: 2rem;
+	height: 2px;
+	background-color: var(--color-grey-5);
+
+}
 
 /* independant content */
 
