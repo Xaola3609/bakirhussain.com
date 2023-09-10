@@ -508,7 +508,7 @@ transition: all 0.4s ease-in-out;
 
 .portfolios .portfolios-item .hover-items h3{
 	font-size: 1.5rem;
-	color: var(--color-white);
+	color: var(--color-primary);
 	margin-bottom: 1.5rem;
 	}
 
@@ -533,7 +533,7 @@ transition: all 0.4s ease-in-out;
 
 .portfolios .portfolios-item .hover-items .icons .icon i{
 	font-size: 1.5rem;
-	color: var(--color-primary);
+	color: var(--color-white);
 	margin: 0 1rem;
 }
 
@@ -542,7 +542,7 @@ transition: all 0.4s ease-in-out;
 }
 
 .portfolios .portfolios-item .hover-items .icons .icon i:hover{
-	background-color: var(--color-white);
+	background-color: var(--color-primary);
 }
 
 /* independant content */
