@@ -492,7 +492,7 @@ transition: all 0.4s ease-in-out;
 	border-radius: 15px;
 }
 
-.portfolios .portfolio-item .hover-items{
+.portfolios .portfolios-item .hover-items{
 	width: 100%;
 	height: 100%;
 	background-color: var(--color-secondary);
