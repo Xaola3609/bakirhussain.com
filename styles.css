@@ -500,8 +500,44 @@ transition: all 0.4s ease-in-out;
 	left: 0;
 	top: 0;
 	border-radius: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 }
 
+.portfolios .portfolios-item .hover-items h3{
+	font-size: 1.5rem;
+	color: var(--color-white);
+	margin-bottom: 1.5rem;
+	}
+
+.portfolios .portfolios-item .hover-items .icons{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.portfolios .portfolios-item .hover-items .icons .icon{
+	background-color: var(--color-primary);
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 1rem;
+	cursor: pointer;
+	transition: all .4s ease-in-out;
+}
+
+.portfolios .portfolios-item .hover-items .icons .icon:hover{
+	background-color: var(--color-white);
+}
+
+.portfolios .portfolios-item .hover-items .icons .icon i:hover{
+	background-color: var(--color-primary);
+}
 
 /* independant content */
 
