@@ -534,7 +534,7 @@ transition: all 0.4s ease-in-out;
 .portfolios .portfolios-item .hover-items .icons .icon i{
 	font-size: 1.5rem;
 	color: var(--color-white);
-	margin: 0 1rem;
+	margin: 0rem;
 }
 
 
