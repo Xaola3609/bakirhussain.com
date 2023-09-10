@@ -535,6 +535,8 @@ transition: all 0.4s ease-in-out;
 	font-size: 1.5rem;
 	color: var(--color-white);
 	margin: 0 1rem;
+	line-height: 1;
+	vertical-align: middle;
 }
 
 .portfolios .portfolios-item .hover-items .icons .icon:hover{
