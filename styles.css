@@ -532,10 +532,21 @@ transition: all 0.4s ease-in-out;
 }
 
 .portfolios .portfolios-item .hover-items .icons .icon i{
-	font-size: 10px;
+	font-size: 20px;
 	color: var(--color-white);
 	margin: 0 1rem;
 	line-height: 50px;
+}
+
+
+.portfolios .portfolios-item .hover-items .icons .icon:hover{
+	background-color: var(--color-white
+	);
+}
+
+.portfolios .portfolios-item .hover-items .icons .icon i:hover{
+
+	background-color: var(--color-primary);
 }
 
 
