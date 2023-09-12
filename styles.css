@@ -540,14 +540,10 @@ transition: all 0.4s ease-in-out;
 }
 
 
-.portfolios .portfolios-item .hover-items .icons .icon:hover{
-	background-color: var(--color-white
-	);
-}
-
-.portfolios .portfolios-item .hover-items .icons .icon i:hover{
-
-	color: var(--color-primary);
+.portfolios .portfolios-item .hover-items .icons .icon:hover,
+.portfolios .portfolios-item .hover-items .icons .icon i:hover {
+    background-color: var(--color-white);
+    color: var(--color-primary);
 }
 
 
