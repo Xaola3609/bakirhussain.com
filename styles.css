@@ -481,6 +481,7 @@ transition: all 0.4s ease-in-out;
 
 .portfolios .portfolios-item{
 	position: relative;
+	border-radius: 15px;
 }
 
 
