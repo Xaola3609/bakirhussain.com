@@ -532,6 +532,7 @@ transition: all 0.4s ease-in-out;
 .portfolios .portfolios-item .hover-items .icons .icon i{
 	font-size: 18px;
 	color: var(--color-white);
+	margin: 0 1rem; 
 	transition: color 0.4s ease-in-out;
 }
 
@@ -543,7 +544,7 @@ transition: all 0.4s ease-in-out;
 
 .portfolios .portfolios-item .hover-items .icons .icon i:hover{
 
-	background-color: var(--color-primary);
+	color: var(--color-primary);
 }
 
 
