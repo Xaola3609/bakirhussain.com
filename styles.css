@@ -329,13 +329,14 @@ transition: all 0.4s ease-in-out;
 	font-size: 1.4rem;
 	 text-align: center;
 	 padding: 3.5rem 0;
-	 position: absolute;
+	 position: relative;
 
 }
 
 
 .stat-title::before{
 	content: '';
+	position: absolute;
 	left: 50%;
 	top: 0%;
 	width: 40%;
