@@ -547,10 +547,9 @@ transition: all 0.4s ease-in-out;
     color: var(--color-primary);
 }
 
-.portfolios-item:hover , .hover-items:hover{
+.portfolios-item:hover .hover-items{
 	opacity: 1;
 	transform:scale(1);
-
 }
 /* independant content */
 
