@@ -465,12 +465,17 @@ transition: all 0.4s ease-in-out;
 
 
 
-/* Portfolios */
+/* Portfolios below */
+
+
+
 
 .port-text{
 	padding: 2rem 0;
 	text-align: center;
 }
+
+/* General Portfolio start */
 
 .portfolios{
 	display: grid;
@@ -478,6 +483,11 @@ transition: all 0.4s ease-in-out;
 	grid-gap: 2rem;
 	margin-top: 3rem;
 }
+
+/* General Portfolio end */ 
+
+/* Normal Neurological status start */ 
+
 
 .portfolios .portfolios-item{
 	position: relative;
