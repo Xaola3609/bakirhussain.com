@@ -712,7 +712,7 @@ transition: all 0.4s ease-in-out;
     color: var(--color-primary);
 }
 
-.pulmo:hover .hover-items{
+.patho:hover .hover-items{
 	opacity: 1;
 	transform:scale(1);
 }
