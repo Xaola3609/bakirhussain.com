@@ -5,9 +5,7 @@
 	list-style: none;
 }
 
-h4 {
-	font-weight: bold
-}
+
 
 :root{
 	--color-primary: #191d2b;
@@ -962,6 +960,10 @@ transition: all 0.4s ease-in-out;
 	margin-top: 3rem;
 }
 
+.blogs .blog .blog-text h4 {
+	font-weight: bold
+}
+
 .blogs .blog {
 	position: relative;
 	background-color: var(--color-grey-5);
@@ -980,6 +982,7 @@ transition: all 0.4s ease-in-out;
 	filter: grayscale(1);
 	transform: scale(1.1);
 	box-shadow: 1px 4px 20px rgba(0, 0, 0, .8);
+	transition: all .4s ease-in-out;
 }
 
 
