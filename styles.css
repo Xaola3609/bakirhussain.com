@@ -961,7 +961,9 @@ transition: all 0.4s ease-in-out;
 }
 
 .blogs .blog .blog-text h4 {
-	font-weight: 900;
+	font-size: 1.5rem;
+	margin-bottom: 0.7rem;
+	transition:all 0.4s ease-in-out
 }
 
 .blogs .blog {
