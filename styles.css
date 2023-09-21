@@ -676,7 +676,7 @@ transition: all 0.4s ease-in-out;
 }
 
 .portfolios .patho .hover-items h3{
-	font-size: 1rem;
+	font-size: 1.5rem;
 	color: var(--color-white);
 	margin-bottom: 1.5rem;
 	}
