@@ -5,6 +5,9 @@
 	list-style: none;
 }
 
+h4 {
+	font-weight: bold
+}
 
 :root{
 	--color-primary: #191d2b;
