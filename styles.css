@@ -2,7 +2,7 @@
 	margin: 0px;
 	padding: 0px;
 	box-sizing: border-box;
-	list-styles: none;
+	list-style: none;
 }
 
 
@@ -676,7 +676,7 @@ transition: all 0.4s ease-in-out;
 }
 
 .portfolios .patho .hover-items h3{
-	font-size: 1.5rem;
+	font-size: 1rem;
 	color: var(--color-white);
 	margin-bottom: 1.5rem;
 	}
