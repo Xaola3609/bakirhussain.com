@@ -560,7 +560,7 @@ transition: all 0.4s ease-in-out;
 }
 
 .portfolios-item:hover .hover-items{
-	opacity: 0.4;
+	opacity: 0.6;
 	transform:scale(1);
 }
 
@@ -637,7 +637,7 @@ transition: all 0.4s ease-in-out;
 }
 
 .pulmo:hover .hover-items{
-	opacity: 0.4;
+	opacity: 0.6;
 	transform:scale(1);
 }
 
@@ -714,7 +714,7 @@ transition: all 0.4s ease-in-out;
 }
 
 .patho:hover .hover-items{
-	opacity: 0.4;
+	opacity: 0.6;
 	transform:scale(1);
 }
 
@@ -791,7 +791,7 @@ transition: all 0.4s ease-in-out;
 }
 
 .pharm:hover .hover-items{
-	opacity: 0.4;
+	opacity: 0.6;
 	transform:scale(1);
 }
 
@@ -867,7 +867,7 @@ transition: all 0.4s ease-in-out;
 }
 
 .uro:hover .hover-items{
-	opacity: 0.4;
+	opacity: 0.6;
 	transform:scale(1);
 }
 
@@ -944,7 +944,7 @@ transition: all 0.4s ease-in-out;
 }
 
 .radio:hover .hover-items{
-	opacity: 0.4;
+	opacity: 0.6;
 	transform:scale(1);
 }
 
