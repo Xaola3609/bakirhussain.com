@@ -1051,9 +1051,10 @@ transition: all 0.4s ease-in-out;
 .main-btn:not(:hover)::before {
 	width: 0;
 	transform: translateX(100%);
+	transition: all .4s ease-in-out;
   }
 
-  
+
 .main-title {
 	text-align: center;
 }
