@@ -25,21 +25,25 @@
 .entry {
   position: relative;
   margin-bottom: 40px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 16px 24px;           /* makes hoverable area larger */
+  background: rgba(255,255,255,0.85); /* subtle card background */
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 
 .entry:hover {
   transform: translateX(8px) scale(1.02);
-  box-shadow: 0 8px 28px rgba(198,40,40,0.2);
+  box-shadow: 0 12px 32px rgba(198,40,40,0.25);
+  background: rgba(255, 245, 245, 0.95); /* slightly highlighted */
 }
 
 .entry::before {
   content: '';
   position: absolute;
-  left: 12px;
-  top: 12px;
-  width: 16px;
-  height: 16px;
+  left: -14px; /* adjust to align with new padding */
+  top: 20px;
+  width: 18px;
+  height: 18px;
   background: var(--accent);
   border-radius: 50%;
   border: 3px solid var(--paper);
@@ -47,7 +51,7 @@
 }
 
 .entry:hover::before {
-  transform: scale(1.3);
+  transform: scale(1.4);
   background: #ff6b6b;
 }
 
