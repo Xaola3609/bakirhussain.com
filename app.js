@@ -1,23 +1,18 @@
-// Header scroll/shrink
+// Header scroll effect
 const header = document.getElementById('header');
-window.addEventListener('scroll', ()=>{
-  header.classList.toggle('scrolled', window.scrollY>50);
-  header.classList.toggle('shrink', window.scrollY>50);
+window.addEventListener('scroll', () => {
+  if(window.scrollY > 50){ header.classList.add('scrolled'); }
+  else{ header.classList.remove('scrolled'); }
 });
 
 // Hamburger menu
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('nav-menu');
-hamburger.addEventListener('click', ()=> navMenu.classList.toggle('active'));
-document.addEventListener('click', e=>{
-  if(!navMenu.contains(e.target) && !hamburger.contains(e.target)){
-    navMenu.classList.remove('active');
-  }
-});
+hamburger.addEventListener('click', ()=>{ navMenu.classList.toggle('active'); });
 
 // Hero slider
-let slides = document.querySelectorAll('.slide, .slide-video');
-let dots = document.querySelectorAll('.dot');
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.dot');
 let currentSlide = 0;
 
 function showSlide(n){
@@ -25,69 +20,51 @@ function showSlide(n){
   dots.forEach(d=>d.classList.remove('active'));
   slides[n].classList.add('active');
   dots[n].classList.add('active');
-  const bg = slides[n].querySelector('.parallax-bg');
-  if(bg) bg.style.transform = 'translateY(-20px)';
   currentSlide = n;
 }
+
 document.querySelector('.next').addEventListener('click', ()=> showSlide((currentSlide+1)%slides.length));
 document.querySelector('.prev').addEventListener('click', ()=> showSlide((currentSlide-1+slides.length)%slides.length));
-dots.forEach(dot=>dot.addEventListener('click', ()=> showSlide(parseInt(dot.dataset.slide))));
-setInterval(()=> showSlide((currentSlide+1)%slides.length), 6000);
+dots.forEach(dot => dot.addEventListener('click', ()=> showSlide(parseInt(dot.dataset.slide))));
 
-// Swipe support for mobile
-let startX=0, endX=0;
-const heroSlider = document.querySelector('.hero-slider.full');
-heroSlider.addEventListener('touchstart', e=> startX = e.touches[0].clientX);
-heroSlider.addEventListener('touchmove', e=> endX = e.touches[0].clientX);
-heroSlider.addEventListener('touchend', ()=>{
-  const diff = startX - endX;
-  if(diff>50) showSlide((currentSlide+1)%slides.length);
-  else if(diff<-50) showSlide((currentSlide-1+slides.length)%slides.length);
-});
+// Auto slide
+setInterval(()=> showSlide((currentSlide+1)%slides.length), 5000);
 
-// Scroll-triggered section animations
-const sections = document.querySelectorAll('section');
-const observer = new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting) entry.target.classList.add('visible');
-  });
-},{threshold:0.2});
-sections.forEach(section=>observer.observe(section));
-
-// Dynamic content navigation
-const mainContent = document.getElementById('main-content');
+// Dynamic section switching
 const sectionsContent = {
-  top: `<section class="hero-slider full visible"> ... </section>`,
-  topics: `<section class="topics-grid visible">
+  top: `<section class="hero-slider">
+    <div class="slide active">
+      <img src="https://via.placeholder.com/1600x500?text=Slide+1" alt="Slide 1">
+      <div class="overlay">Welcome to METAL GEAR</div>
+    </div>
+    <div class="slide">
+      <img src="https://via.placeholder.com/1600x500?text=Slide+2" alt="Slide 2">
+      <div class="overlay">Check out the latest releases</div>
+    </div>
+  </section>`,
+  topics: `<section class="topics-grid">
     <article class="topic-card">
-      <img src="https://upload.wikimedia.org/wikipedia/en/8/82/Metal_Gear_Solid_3_Snake_Eater_Cover.jpg" alt="Topic 1">
+      <img src="https://via.placeholder.com/400x180?text=Topic+1" alt="Topic 1">
       <h3>METAL GEAR SOLID Δ: SNAKE EATER</h3>
       <p>Online mode "FOX HUNT" released!</p>
       <a href="#">Details</a>
     </article>
     <article class="topic-card">
-      <img src="https://upload.wikimedia.org/wikipedia/en/4/4d/Metal_Gear_Solid_Cover.png" alt="Topic 2">
+      <img src="https://via.placeholder.com/400x180?text=Topic+2" alt="Topic 2">
       <h3>Trailer Released</h3>
       <p>Watch on official YouTube</p>
       <a href="#">Details</a>
     </article>
   </section>`,
-  news: `<section class="topics-grid visible"><p>Latest news will appear here</p></section>`,
-  history: `<section class="topics-grid visible"><p>Game history content</p></section>`,
-  goods: `<section class="topics-grid visible"><p>Merchandise and goods</p></section>`
+  news: `<section class="topics-grid"><p>Latest news will appear here</p></section>`,
+  history: `<section class="topics-grid"><p>Game history content</p></section>`,
+  goods: `<section class="topics-grid"><p>Merchandise and goods</p></section>`
 };
 
-document.querySelectorAll('nav a').forEach(link=>{
+document.querySelectorAll('nav a').forEach(link => {
   link.addEventListener('click', e=>{
     e.preventDefault();
     const key = link.dataset.section;
-    mainContent.style.opacity = 0;
-    setTimeout(()=>{
-      mainContent.innerHTML = sectionsContent[key] || `<section class="topics-grid visible"><p>Coming soon</p></section>`;
-      mainContent.style.opacity = 1;
-      // Re-observe new sections for scroll animations
-      const newSections = mainContent.querySelectorAll('section');
-      newSections.forEach(section=>observer.observe(section));
-    },400);
+    document.getElementById('main-content').innerHTML = sectionsContent[key];
   });
 });
