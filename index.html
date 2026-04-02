@@ -1,378 +1,84 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Dr. Bakir Hussain.</title>
-  <meta name="description" content="Interactive single-page CV for a medical professional — sleek, modern, highly interactive." />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Bakir Hussain</title>
 
-  <style>
-    :root{
-      --eggwhite: #f9f9f9;
-      --paper: #ffffff;
-      --accent: #c62828; /* red */
-      --muted: #6b6b6b;
-      --glass: rgba(255,255,255,0.6);
-      --radius: 14px;
-      --maxw: 1100px;
-      --shadow-1: 0 6px 24px rgba(12,12,12,0.08);
-      --shadow-2: 0 10px 40px rgba(12,12,12,0.12);
-      --mono: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue';
-    }
-
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0; font-family:var(--mono); background:var(--eggwhite); color:#111;
-      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    a{color:inherit}
-    img{max-width:100%; display:block}
-
-    /* NAV */
-    header{
-      position:fixed; inset:12px 24px auto 24px; z-index:1200; display:flex; gap:12px; align-items:center; justify-content:space-between; width:calc(100% - 48px);
-    }
-    .nav-card{display:flex; gap:18px; align-items:center; background:linear-gradient(180deg, rgba(255,255,255,0.85), rgba(250,250,250,0.65)); padding:10px 16px; border-radius:12px; box-shadow:var(--shadow-1); backdrop-filter: blur(6px);}
-    .brand{display:flex; gap:12px; align-items:center}
-    .brand .logo{width:46px; height:46px; border-radius:10px; background:linear-gradient(135deg,var(--paper),var(--eggwhite)); display:grid; place-items:center; font-weight:800; color:var(--accent);}
-    .brand h4{margin:0; font-size:0.95rem}
-    .nav-links{display:flex; gap:12px; align-items:center}
-    .nav-links button{background:none; border:none; padding:8px 10px; border-radius:8px; font-weight:600; cursor:pointer; color:#333}
-    .nav-links button:hover{color:var(--accent); transform:translateY(-2px)}
-
-    /* HERO */
-    .hero{
-      min-height:100vh; display:flex; align-items:center; justify-content:center; text-align:center; position:relative; overflow:hidden;
-    }
-    .hero::before{
-      content:''; position:absolute; inset:0;
-      background-image:linear-gradient(180deg, rgba(249,249,249,0.25), rgba(255,255,255,0.6)), url('HERO_BG_URL');
-      background-size:cover; background-position:center;
-      filter: saturate(0.9) contrast(1.02) brightness(0.98);
-      z-index:0;
-    }
-    .hero-inner{position:relative; z-index:4; max-width:var(--maxw); padding:100px 22px 140px; display:grid; grid-template-columns:1fr 420px; gap:40px; align-items:center}
-    .card-hero{background:rgba(255,255,255,0.9); border-radius:16px; padding:34px; box-shadow:var(--shadow-2); text-align:left}
-    .eyebrow{display:inline-block; padding:6px 10px; border-radius:999px; background:rgba(198,40,40,0.09); color:var(--accent); font-weight:700; font-size:0.85rem}
-    h1{font-size:2.6rem; margin:10px 0 6px; color:var(--accent)}
-    p.lead{color:var(--muted); margin:0 0 16px}
-    .cta-row{display:flex; gap:12px; margin-top:18px}
-    .btn{padding:10px 14px; border-radius:10px; font-weight:700; cursor:pointer; border:2px solid rgba(0,0,0,0.06); display:inline-flex; gap:8px; align-items:center}
-    .btn-primary{background:var(--accent); color:white; border:none}
-    .btn-ghost{background:transparent}
-
-    .mini-card{background:rgba(255,255,255,0.85); border-radius:14px; padding:18px; box-shadow:var(--shadow-1); align-self:start}
-    .avatar{width:86px; height:86px; border-radius:12px; overflow:hidden; background:#eee}
-    .meta{margin-top:10px}
-    .meta h3{margin:0; font-size:1.05rem}
-    .meta p{margin:6px 0 0; color:var(--muted); font-size:0.95rem}
-
-    /* MAIN */
-    main{padding-top:40vh}
-    .section{max-width:var(--maxw); margin:0 auto; padding:64px 20px}
-    .section h2{font-size:1.8rem; color:var(--accent); margin-bottom:18px}
-
-    .skills-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px}
-    .skill-card{background:rgba(255,255,255,0.85); border-radius:12px; padding:18px; box-shadow:var(--shadow-1);}
-    .skill-title{display:flex; justify-content:space-between; align-items:center}
-    .meter{height:10px; border-radius:999px; background:#eee; margin-top:10px; overflow:hidden}
-    .meter > i{display:block; height:100%; width:0%; background:linear-gradient(90deg,var(--accent), #ff6b6b); transition:width 1.4s ease}
-
-    .timeline{position:relative; padding-left:30px;}
-    .timeline::before{content:''; position:absolute; left:8px; top:0; bottom:0; width:4px; background:linear-gradient(180deg,var(--accent), #ff6b6b); border-radius:6px}
-    .entry{position:relative; margin-bottom:28px; padding:12px 18px; background:var(--paper); border-radius:12px; box-shadow:var(--shadow-1)}
-    .entry::before{content:''; position:absolute; left:-22px; top:22px; width:14px; height:14px; background:var(--paper); border:4px solid var(--accent); border-radius:50%}
-    .entry small{color:var(--muted)}
-
-    .projects-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:18px}
-    .project{border-radius:12px; overflow:hidden; box-shadow:var(--shadow-2); background:rgba(255,255,255,0.9); transition:transform .25s ease}
-    .project:hover{transform:translateY(-8px)}
-    .project .thumb{height:160px; background:#ddd; display:grid; place-items:center}
-    .project .meta{padding:14px}
-
-    footer{padding:60px 20px 120px; text-align:center}
-    .contact-card{display:inline-grid; grid-auto-flow:column; align-items:center; gap:10px; background:var(--paper); padding:18px 22px; border-radius:12px; box-shadow:var(--shadow-2)}
-
-    .modal{position:fixed; inset:0; display:grid; place-items:center; background:rgba(2,6,23,0.6); z-index:1400; opacity:0; pointer-events:none; transition:opacity .18s ease}
-    .modal.open{opacity:1; pointer-events:auto}
-    .modal-inner{width:min(900px,95%); background:var(--paper); border-radius:12px; overflow:hidden}
-
-    @media (max-width:980px){
-      .hero-inner{grid-template-columns:1fr; padding:80px 18px 100px}
-    }
-    @media (max-width:520px){
-      h1{font-size:1.8rem}
-      .brand h4{display:none}
-      .nav-links{display:none}
-    }
-  </style>
+<link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-  <!-- NAV -->
-  <header>
-    <div class="nav-card">
-      <div class="brand">
-        <div class="logo">BH</div>
-        <div>
-          <h4>Dr. Bakir Hussain</h4>
-          <div style="font-size:12px;color:var(--muted)">Senior House Officer</div>
-        </div>
-      </div>
-      <nav class="nav-links" aria-label="Main navigation">
-        <button onclick="scrollToId('hero')">Home</button>
-        <button onclick="scrollToId('skills')">Skills</button>
-        <button onclick="scrollToId('experience')">Experience</button>
-        <button onclick="scrollToId('projects')">Projects</button>
-        <button onclick="scrollToId('contact')">Contact</button>
-      </nav>
-    </div>
-  </header>
+<canvas id="particles"></canvas>
 
-  <!-- HERO -->
-  <section class="hero" id="hero">
-    <div class="hero-inner">
-      <div class="card-hero">
-        <span class="eyebrow">Senior House Officer • MD</span>
-        <h1 id="hero-title">Dr. Bakir Hussain</h1>
-        <p class="lead">Clinician with experience in General Medicine and Emergency Medicine.</p>
-        <div class="cta-row">
-          <button class="btn btn-primary" onclick="downloadPDF()">Download CV (PDF)</button>
-          <button class="btn btn-ghost" onclick="openModal('contact-modal')">Contact</button>
-        </div>
-      </div>
+<nav>
+<a href="#about">About</a>
+<a href="#experience">Experience</a>
+<a href="#contact">Contact</a>
+</nav>
 
-      <aside class="mini-card">
-        <div style="display:flex; gap:14px">
-          <div class="avatar">
-            <img src="Image of Bakir.jfif" alt="Dr Bakir Hussain" style="width:100%;height:100%;object-fit:cover">
-          </div>
-          <div class="meta">
-            <h3>Dr. Bakir Hussain</h3>
-            <p>Senior House Officer</p>
-          </div>
-        </div>
-      </aside>
-    </div>
-  </section>
-
-  <!-- MAIN -->
-  <main>
-    <section id="expertise" class="section">
-  <h2>Skills and Interests</h2>
-  <ul style="list-style:none; padding:0; margin:0; display:grid; gap:14px">
-    <li style="background:rgba(255,255,255,0.85); padding:16px; border-radius:12px; box-shadow:var(--shadow-1)">
-      <strong>Basic Life Support</strong><br>
-      I have completed the cogntive and skills evaluations in accordance with the curriculum of the American Heart Association Basic Life Support (CPR and AED) Program.
-    </li>
-    <li style="background:rgba(255,255,255,0.85); padding:16px; border-radius:12px; box-shadow:var(--shadow-1)">
-      <strong>Acute Patient Management</strong><br>
-      Frontline acute care experience in trauma, resuscitation, and critical decision-making.
-    </li>
-    <li style="background:rgba(255,255,255,0.85); padding:16px; border-radius:12px; box-shadow:var(--shadow-1)">
-      <strong>Clinical Governance</strong><br>
-      I have an interest in ensuring the pillars of Clicinal Goverenance are adhered to fully to ensure high standards of patient care.
-    </li>
-    <li style="background:rgba(255,255,255,0.85); padding:16px; border-radius:12px; box-shadow:var(--shadow-1)">
-      <strong>Clinical Research</strong><br>
-      I have an interest in clinical research and case studies.
-    </li>
-    <li style="background:rgba(255,255,255,0.85); padding:16px; border-radius:12px; box-shadow:var(--shadow-1)">
-      <strong>Languages</strong><br>
-      English (Native), Arabic (Conversational), German (conversational), Hungarian (Basic)
-    </li>
-  </ul>
+<section class="hero">
+    <h1>Dr. Bakir Hussain</h1>
+    <div class="typing" id="typing"></div>
+    <a href="Bakir_Hussain_CV.pdf" class="btn" download>Download CV</a>
 </section>
 
-<section id="experience" class="section">
-  <h2>Clinical History</h2>
-  <div class="timeline">
-
-    <!-- Central vertical line with arrow -->
-    <div class="timeline-line"></div>
-
-    <!-- Timeline entries -->
-    <div class="entry">
-      <h3>Final-Year Clinical Training, <strong>University of Debrecen — Department of Surgery</strong></h3>
-      <small>14/04/2025 — 16/05/2025</small>
-      <p>Main Roles & Responsibilities:</p>
-      <ul>
-        <li>Assisted in ward rounds, minor procedures, and pre-operative care.</li>
-        <li>Assisted in major surgeries both open and laparoscopic.</li>
-      </ul>
+<section id="about" class="fade">
+    <h2>Profile</h2>
+    <div class="card">
+        Medical Doctor with strong interest in Emergency Medicine and Pediatrics. 
+        Focused on clinical reasoning, patient safety, and multidisciplinary teamwork.
     </div>
-
-    <div class="entry">
-      <h3>Final-Year Clinical Training, <strong>University of Debrecen — Department of Pediatrics</strong></h3>
-      <small>24/02/2025 — 04/04/2025</small>
-      <p>Main Roles & Responsibilities:</p>
-      <ul>
-        <li>Filling in medical charts.</li>
-        <li>Taking medical history and collateral.</li>
-        <li>Physical examination of children and infants.</li>
-      </ul>
-    </div>
-
-    <div class="entry">
-      <h3>Final-Year Clinical Training, <strong>University of Debrecen — Department of Internal Medicine</strong></h3>
-      <small>02/12/2024 — 31/01/2025</small>
-      <p>Main Roles & Responsibilities:</p>
-      <ul>
-        <li>Filling in and reporting on patients' medical charts.</li>
-        <li>Interpreting daily ECG examinations.</li>
-        <li>Diagnostic and treatment planning with resident physician.</li>
-      </ul>
-    </div>
-
-    <div class="entry">
-      <h3>Final-Year Clinical Training, <strong>University of Debrecen — Department of Psychiatry</strong></h3>
-      <small>04/11/2024 — 22/11/2024</small>
-      <p>Main Roles & Responsibilities:</p>
-      <ul>
-        <li>Recording of general and psychiatric history.</li>
-        <li>Evaluation of MMSE.</li>
-        <li>Attending regular multidisciplinary meetings regarding patient management.</li>
-      </ul>
-    </div>
-
-    <div class="entry">
-      <h3>Final-Year Clinical Training, <strong>University of Debrecen — Department of Emergency Medicine</strong></h3>
-      <small>01/09/2024 — 05/10/2024</small>
-      <p>Main Roles & Responsibilities:</p>
-      <ul>
-        <li>Triage and patient assessment.</li>
-        <li>Evaluation of patient consciousness and vitals.</li>
-        <li>Escalation of critical patients to appropriate emergency clinician.</li>
-      </ul>
-    </div>
-
-    <div class="entry">
-      <h3>Final-Year Clinical Training, <strong>University of Debrecen — Department of Neurology</strong></h3>
-      <small>12/08/2024 — 11/10/2024</small>
-      <p>Main Roles & Responsibilities:</p>
-      <ul>
-        <li>Neurological examination of patients.</li>
-        <li>Stroke risk assessment of admitted patients.</li>
-        <li>Vascular imaging evaluation with resident neurologist.</li>
-      </ul>
-    </div>
-
-    <div class="entry">
-      <h3>Final-Year Clinical Training, <strong>University of Debrecen — Department of Obstetrics & Gynecology</strong></h3>
-      <small>01/07/2024 — 26/07/2024</small>
-      <p>Main Roles & Responsibilities:</p>
-      <ul>
-        <li>Assisted in both gynaecological and obstetric surgeries.</li>
-        <li>Performed 24-hour shifts in obstetrics labour ward, including CTG monitoring and escalation to consultant on call.</li>
-      </ul>
-    </div>
-
-    <div class="entry">
-      <h3><strong>Clinical Placement in General Practice</strong></h3>
-      <small>July – August 2025</small>
-      <ul>
-        <li>Observed consultations with up to 10 patients daily across diverse medical issues.</li>
-        <li>Learned patient management, referrals, and medical documentation (certificates).</li>
-        <li>Assisted in phlebotomy under supervision.</li>
-        <li>Observed the utilization of Helix software for ordering tests and preparing prescriptions.</li>
-      </ul>
-    </div>
-
-    <div class="entry">
-      <h3><strong>Clinical Observation in Psychiatry — St. Vincent’s University Hospital, Dublin</strong></h3>
-      <small>August – September 2023</small>
-      <ul>
-        <li>Shadowed psychiatrists and interns in inpatient and outpatient mental health care.</li>
-        <li>Observed patient interviews, ward rounds, and emergency liaison assessments.</li>
-        <li>Witnessed the management of an agitated patient, including haloperidol administration in a restrained setting.</li>
-        <li>Reviewed patient charts and gained insight into case management.</li>
-        <li>Interacted with multidisciplinary staff to understand diverse roles in mental health care.</li>
-      </ul>
-    </div>
-
-  </div>
 </section>
 
+<section id="experience" class="fade">
+    <h2>Clinical Experience</h2>
 
-    <section id="projects" class="section">
-      <h2>Projects</h2>
-      <div class="projects-grid">
-        <div class="project" tabindex="0" role="button"
-             onclick="openProject(this)" 
-             data-title="Thesis: Opioid Addiction Treatment" 
-             data-desc="A 35-page thesis exploring pharmacological advancements.">
-          <div class="thumb"></div>
-          <div class="meta">
-            <h3>Thesis: Opioid Addiction Treatment</h3>
-            <p style="color:var(--muted)">Clinical review</p>
-          </div>
+    <div class="grid">
+
+        <div class="card" onclick="toggleCard(this)">
+            <h3>Pediatric Emergency – Tallaght</h3>
+            <p>2026 – Present</p>
+            <div class="extra">
+                Exposure to triage, pediatric emergencies, and simulated resuscitation.
+            </div>
         </div>
-      </div>
-    </section>
 
-    <section id="contact" class="section">
-      <h2>Get in touch</h2>
-      <div class="contact-card">
-        <div><strong>Email:</strong>BakirHussain.MD@gmail.com</div>
-        <div style="width:1px;height:40px;background:#eee"></div>
-        <div><strong>Location:</strong> Dublin, Ireland</div>
-      </div>
-    </section>
-  </main>
+        <div class="card" onclick="toggleCard(this)">
+            <h3>General Practice</h3>
+            <p>2025</p>
+            <div class="extra">
+                Phlebotomy, referrals, documentation, and patient workflow.
+            </div>
+        </div>
 
-  <footer>
-    <div style="max-width:var(--maxw); margin:0 auto; color:var(--muted); font-size:0.95rem">Please Email me about any inquiries.</div>
-  </footer>
+        <div class="card" onclick="toggleCard(this)">
+            <h3>Psychiatry</h3>
+            <p>2023</p>
+            <div class="extra">
+                Inpatient and emergency psychiatry exposure including agitation management.
+            </div>
+        </div>
 
-  <!-- Modals -->
-  <div id="contact-modal" class="modal">
-    <div class="modal-inner" style="padding:18px">
-      <strong>Contact Dr. Bakir Hussain</strong>
-      <button onclick="closeModal('contact-modal')">✕</button>
     </div>
-  </div>
+</section>
 
-  <div id="project-modal" class="modal">
-    <div class="modal-inner" style="padding:18px">
-      <strong id="project-title">Project</strong>
-      <div id="project-body"></div>
-      <button onclick="closeModal('project-modal')">Close</button>
+<section id="contact" class="fade">
+    <h2>Contact</h2>
+    <div class="card">
+        Email: BakirHussain.MD@gmail.com<br>
+        <br>
+        Dublin, Ireland
     </div>
-  </div>
+</section>
 
-  <script>
-    function scrollToId(id){
-      document.getElementById(id).scrollIntoView({behavior:'smooth'});
-    }
+<footer>
+    © 2026 Dr. Bakir Hussain
+</footer>
 
-    // animate skills
-    const meters = document.querySelectorAll('.meter > i');
-    const io = new IntersectionObserver(entries=>{
-      entries.forEach(en=>{
-        if(en.isIntersecting){
-          en.target.style.width = en.target.dataset.value + '%';
-        }
-      });
-    },{threshold:0.3});
-    meters.forEach(m=>io.observe(m));
+<script src="script.js"></script>
 
-    function openProject(el){
-      document.getElementById('project-title').textContent = el.dataset.title;
-      document.getElementById('project-body').textContent = el.dataset.desc;
-      openModal('project-modal');
-    }
-    function openModal(id){
-      document.getElementById(id).classList.add('open');
-    }
-    function closeModal(id){
-      document.getElementById(id).classList.remove('open');
-    }
-    function downloadPDF(){
-      window.open('Bakir Hussain Resume.pdf', '_blank');
-    }
-  </script>
 </body>
 </html>
