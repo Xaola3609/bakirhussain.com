@@ -6,77 +6,58 @@
 <title>Dr. Bakir Hussain</title>
 
 <link rel="stylesheet" href="styles.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<canvas id="particles"></canvas>
+<div class="scroll-container">
 
-<nav>
-<a href="#about">About</a>
-<a href="#experience">Experience</a>
-<a href="#contact">Contact</a>
-</nav>
-
-<section class="hero">
-    <h1>Dr. Bakir Hussain</h1>
-    <div class="typing" id="typing"></div>
-    <a href="Bakir_Hussain_CV.pdf" class="btn" download>Download CV</a>
-</section>
-
-<section id="about" class="fade">
-    <h2>Profile</h2>
-    <div class="card">
-        Medical Doctor with strong interest in Emergency Medicine and Pediatrics. 
-        Focused on clinical reasoning, patient safety, and multidisciplinary teamwork.
-    </div>
-</section>
-
-<section id="experience" class="fade">
-    <h2>Clinical Experience</h2>
-
-    <div class="grid">
-
-        <div class="card" onclick="toggleCard(this)">
-            <h3>Pediatric Emergency – Tallaght</h3>
-            <p>2026 – Present</p>
-            <div class="extra">
-                Exposure to triage, pediatric emergencies, and simulated resuscitation.
-            </div>
+    <section class="panel hero">
+        <div class="content">
+            <h1>BAKIR HUSSAIN</h1>
+            <p>MEDICAL DOCTOR</p>
         </div>
+    </section>
 
-        <div class="card" onclick="toggleCard(this)">
-            <h3>General Practice</h3>
-            <p>2025</p>
-            <div class="extra">
-                Phlebotomy, referrals, documentation, and patient workflow.
-            </div>
+    <section class="panel about">
+        <div class="content">
+            <h2>PROFILE</h2>
+            <p>
+            Medical Doctor focused on Emergency Medicine, Pediatrics, and clinical excellence.
+            </p>
         </div>
+    </section>
 
-        <div class="card" onclick="toggleCard(this)">
-            <h3>Psychiatry</h3>
-            <p>2023</p>
-            <div class="extra">
-                Inpatient and emergency psychiatry exposure including agitation management.
+    <section class="panel experience">
+        <div class="content">
+            <h2>CLINICAL EXPERIENCE</h2>
+
+            <div class="block">
+                <h3>PEDIATRIC EMERGENCY</h3>
+                <p>Triage · Acute Care · Resuscitation</p>
             </div>
+
+            <div class="block">
+                <h3>GENERAL PRACTICE</h3>
+                <p>Consultations · Phlebotomy · Referrals</p>
+            </div>
+
+            <div class="block">
+                <h3>PSYCHIATRY</h3>
+                <p>Inpatient · Emergency · Risk Assessment</p>
+            </div>
+
         </div>
+    </section>
 
-    </div>
-</section>
+    <section class="panel contact">
+        <div class="content">
+            <h2>CONTACT</h2>
+            <p>Email: BakirHussain.MD@gmail.com</p>
+        </div>
+    </section>
 
-<section id="contact" class="fade">
-    <h2>Contact</h2>
-    <div class="card">
-        Email: BakirHussain.MD@gmail.com<br>
-        <br>
-        Dublin, Ireland
-    </div>
-</section>
-
-<footer>
-    © 2026 Dr. Bakir Hussain
-</footer>
+</div>
 
 <script src="script.js"></script>
 
