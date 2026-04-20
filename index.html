@@ -1,187 +1,144 @@
-<!-- ========================= -->
-<!-- index.html (Homepage) -->
-<!-- ========================= -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bakir Hussain</title>
+<title>Bakir Hussain | Notes From My Interests</title>
 <link href="https://fonts.cdnfonts.com/css/metal-gear-solid" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header>
-  <h1>Bakir Hussain</h1>
-  <nav>
-    <a href="medical.html">Medical</a>
-    <a href="art.html">Drawings</a>
-    <a href="gardening.html">Gardening</a>
-    <a href="photography.html">Photography</a>
-    <a href="games.html">Game Design</a>
-  </nav>
+<header class="site-header">
+  <div class="page-shell">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">Bakir Hussain</span>
+      <span class="brand-sub">Interests Archive</span>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="medicine.html">Medicine</a>
+      <a href="gardening.html">Gardening</a>
+      <a href="art.html">Art</a>
+      <a href="videogames.html">Video Games</a>
+      <a href="japanese.html">Japanese</a>
+    </nav>
+  </div>
 </header>
 
-<section class="hero">
-  <div class="hero-content">
-    <h2>Ideas, Medicine & Everything Else</h2>
-    <p>A personal space for documenting clinical learning, creative projects, and everything in between.</p>
+<main>
+  <section class="hero">
+    <div class="page-shell hero-grid">
+      <article class="hero-panel">
+        <p class="topic-kicker">Personal Blog</p>
+        <h1 class="hero-title">A home for the things I keep returning to.</h1>
+        <p class="hero-copy">This site is now less about a formal CV and more about the subjects that genuinely hold my attention: medicine, gardening, art, video games, and learning Japanese. Each page is a room with its own atmosphere, notes, and ongoing curiosities.</p>
+        <div class="hero-actions">
+          <a class="button" href="medicine.html">Start With Medicine</a>
+          <a class="button-secondary" href="#explore">Browse All Topics</a>
+        </div>
+      </article>
+
+      <aside class="info-panel">
+        <h2>Current Direction</h2>
+        <div class="info-stack">
+          <div class="info-item">
+            <span>Format</span>
+            A multi-page personal blog with themed sections instead of career-focused categories.
+          </div>
+          <div class="info-item">
+            <span>Tone</span>
+            Reflective, curious, and a little more human than a professional profile.
+          </div>
+          <div class="info-item">
+            <span>Design</span>
+            The same neon-HUD mood, repurposed for storytelling, notes, and interests.
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section" id="explore">
+    <div class="page-shell">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">Explore The Sections</h2>
+          <p class="section-copy">Each page has a slightly different emphasis, but they all live inside the same visual world so the site still feels cohesive.</p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <a class="card" href="medicine.html">
+          <h3 class="card-title">Medicine</h3>
+          <p>Clinical reflections, learning notes, communication in practice, and the parts of medicine that stay with me long after a shift ends.</p>
+          <div class="tag-row">
+            <span class="tag">Practice</span>
+            <span class="tag">Observation</span>
+          </div>
+        </a>
+
+        <a class="card" href="gardening.html">
+          <h3 class="card-title">Gardening</h3>
+          <p>Small seasonal experiments, plant care wins, things that failed, and the quieter satisfaction of growing something slowly.</p>
+          <div class="tag-row">
+            <span class="tag">Seasonal</span>
+            <span class="tag">Outdoor Life</span>
+          </div>
+        </a>
+
+        <a class="card" href="art.html">
+          <h3 class="card-title">Art</h3>
+          <p>Visual references, taste, sketchbook thoughts, and the artists, textures, and compositions I keep returning to.</p>
+          <div class="tag-row">
+            <span class="tag">Visual Study</span>
+            <span class="tag">Inspiration</span>
+          </div>
+        </a>
+
+        <a class="card" href="videogames.html">
+          <h3 class="card-title">Video Games</h3>
+          <p>Games I admire, worlds that linger, mechanics worth talking about, and why certain titles become part of everyday life.</p>
+          <div class="tag-row">
+            <span class="tag">Play</span>
+            <span class="tag">Design</span>
+          </div>
+        </a>
+
+        <a class="card" href="japanese.html">
+          <h3 class="card-title">Japanese</h3>
+          <p>Language study notes, phrases worth keeping, motivation, and the long-term rhythm of learning something demanding.</p>
+          <div class="tag-row">
+            <span class="tag">Language</span>
+            <span class="tag">Study Log</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="page-shell columns">
+      <div class="quote-card">
+        <p class="article-meta">Why This Works Better</p>
+        <h2 class="section-title">The homepage is now a hub.</h2>
+        <p>Instead of presenting you as a list of qualifications, it opens the door to the things that actually shape your attention and personality. That makes the site feel more lived-in and more memorable.</p>
+      </div>
+      <div class="quote-card">
+        <p class="article-meta">What Changed</p>
+        <ul class="bullet-list">
+          <li>Removed the CV-style navigation and replaced it with topic-based pages.</li>
+          <li>Kept the premium neon interface so the overall identity still feels familiar.</li>
+          <li>Built room for future posts, notes, and updates inside each interest page.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="page-shell footer-inner">
+    <p>� 2026 Bakir Hussain</p>
+    <p>Personal notes on medicine, gardening, art, games, and Japanese.</p>
   </div>
-</section>
-
-<section class="container">
-  <div class="grid">
-
-    <a href="medical.html" class="card">
-      <h3>Medical</h3>
-      <p>Clinical notes, audits, studies, and reflections from training.</p>
-    </a>
-
-    <a href="art.html" class="card">
-      <h3>Drawings</h3>
-      <p>Sketches, anatomy drawings, and creative exploration.</p>
-    </a>
-
-    <a href="gardening.html" class="card">
-      <h3>Gardening</h3>
-      <p>Experiments, progress logs, and things that may or may not grow.</p>
-    </a>
-
-    <a href="photography.html" class="card">
-      <h3>Photography</h3>
-      <p>Captured moments, composition practice, and visual ideas.</p>
-    </a>
-
-    <a href="games.html" class="card">
-      <h3>Game Design</h3>
-      <p>Concepts, mechanics, and experimental ideas.</p>
-    </a>
-
-  </div>
-</section>
-
-<footer>
-  <p>© 2026 Bakir Hussain</p>
 </footer>
-</body>
-</html>
-
-
-<!-- ========================= -->
-<!-- medical.html -->
-<!-- ========================= -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Medical</title>
-<link rel="stylesheet" href="styles.css">
-</head>
-<body>
-<header>
-  <h1>Medical</h1>
-</header>
-
-<div class="container">
-  <h2>Clinical Work & Learning</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Clinical Diary</h3>
-      <p>Reflections on cases, learning points, and day-to-day experiences.</p>
-    </div>
-    <div class="card">
-      <h3>Audits & Research</h3>
-      <p>Clinical audits, studies, and academic contributions.</p>
-    </div>
-  </div>
-</div>
-</body>
-</html>
-
-
-<!-- ========================= -->
-<!-- art.html -->
-<!-- ========================= -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Drawings</title>
-<link rel="stylesheet" href="styles.css">
-</head>
-<body>
-<header><h1>Drawings</h1></header>
-<div class="container">
-  <div class="grid">
-    <div class="card"><h3>Sketch 1</h3><p>Description</p></div>
-    <div class="card"><h3>Sketch 2</h3><p>Description</p></div>
-  </div>
-</div>
-</body>
-</html>
-
-
-<!-- ========================= -->
-<!-- gardening.html -->
-<!-- ========================= -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Gardening</title>
-<link rel="stylesheet" href="styles.css">
-</head>
-<body>
-<header><h1>Gardening</h1></header>
-<div class="container">
-  <div class="grid">
-    <div class="card"><h3>Log 1</h3><p>Plant progress</p></div>
-    <div class="card"><h3>Log 2</h3><p>Experiment</p></div>
-  </div>
-</div>
-</body>
-</html>
-
-
-<!-- ========================= -->
-<!-- photography.html -->
-<!-- ========================= -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Photography</title>
-<link rel="stylesheet" href="styles.css">
-</head>
-<body>
-<header><h1>Photography</h1></header>
-<div class="container">
-  <div class="grid">
-    <div class="card"><h3>Photo 1</h3><p>Description</p></div>
-    <div class="card"><h3>Photo 2</h3><p>Description</p></div>
-  </div>
-</div>
-</body>
-</html>
-
-
-<!-- ========================= -->
-<!-- games.html -->
-<!-- ========================= -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Game Design</title>
-<link rel="stylesheet" href="styles.css">
-</head>
-<body>
-<header><h1>Game Design</h1></header>
-<div class="container">
-  <div class="grid">
-    <div class="card"><h3>Idea 1</h3><p>Mechanic concept</p></div>
-    <div class="card"><h3>Idea 2</h3><p>Design notes</p></div>
-  </div>
-</div>
 </body>
 </html>
