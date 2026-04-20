@@ -1,200 +1,187 @@
 <!-- ========================= -->
-<!-- index.html (Premium UI/UX) -->
+<!-- index.html (Homepage) -->
 <!-- ========================= -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dr. Bakir Hussain MD</title>
+<title>Bakir Hussain</title>
 <link href="https://fonts.cdnfonts.com/css/metal-gear-solid" rel="stylesheet">
-
-<style>
-:root{
-  --bg:#0b0f12;
-  --panel:#11181d;
-  --accent:#00ffcc;
-  --accent-soft:rgba(0,255,204,0.2);
-  --text:#e6f1f1;
-  --muted:#9fb3b3;
-}
-
-*{margin:0;padding:0;box-sizing:border-box}
-body{
-  font-family: 'Segoe UI', system-ui, sans-serif;
-  background: radial-gradient(circle at top, #0f1a1f, #070b0d 70%);
-  color:var(--text);
-}
-
-a{color:var(--accent);text-decoration:none}
-
-/* NAV */
-header{
-  position:sticky;top:0;
-  display:flex;justify-content:space-between;align-items:center;
-  padding:1rem 2rem;
-  background:rgba(0,0,0,0.7);
-  backdrop-filter:blur(8px);
-  border-bottom:1px solid var(--accent-soft);
-}
-header h1{
-  font-family:'Metal Gear Solid';
-  color:var(--accent);
-  font-size:1.6rem;
-  letter-spacing:1px;
-}
-nav a{
-  margin-left:1.5rem;
-  font-size:0.9rem;
-  position:relative;
-}
-nav a::after{
-  content:'';
-  position:absolute;
-  left:0;bottom:-4px;
-  width:0%;height:2px;
-  background:var(--accent);
-  transition:0.3s;
-}
-nav a:hover::after{width:100%}
-
-/* HERO */
-.hero{
-  height:75vh;
-  display:flex;align-items:center;justify-content:center;
-  text-align:center;
-  position:relative;
-}
-.hero::before{
-  content:'';
-  position:absolute;
-  inset:0;
-  background:radial-gradient(circle, transparent, #000 80%);
-}
-.hero-content{
-  position:relative;
-  max-width:700px;
-}
-.hero h2{
-  font-family:'Metal Gear Solid';
-  color:var(--accent);
-  font-size:2.8rem;
-  margin-bottom:1rem;
-}
-.hero p{
-  color:var(--muted);
-  font-size:1rem;
-  line-height:1.6;
-}
-.hero .cta{
-  margin-top:1.5rem;
-  display:inline-block;
-  padding:0.6rem 1.2rem;
-  border:1px solid var(--accent);
-  border-radius:6px;
-  transition:0.3s;
-}
-.hero .cta:hover{
-  background:var(--accent);
-  color:#000;
-  box-shadow:0 0 12px var(--accent);
-}
-
-/* GRID CARDS */
-.container{max-width:1100px;margin:auto;padding:3rem 1.5rem}
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:1.5rem;
-}
-.card{
-  background:var(--panel);
-  border:1px solid var(--accent-soft);
-  padding:1.2rem;
-  border-radius:10px;
-  position:relative;
-  transition:0.3s;
-}
-.card:hover{
-  transform:translateY(-5px);
-  border-color:var(--accent);
-  box-shadow:0 0 20px rgba(0,255,204,0.15);
-}
-.card h3{
-  font-family:'Metal Gear Solid';
-  color:var(--accent);
-  font-size:1.2rem;
-  margin-bottom:0.6rem;
-}
-.card p{color:var(--muted);font-size:0.9rem;line-height:1.5}
-
-/* subtle HUD line */
-.card::after{
-  content:'';
-  position:absolute;
-  left:0;bottom:0;
-  width:100%;height:1px;
-  background:linear-gradient(90deg, transparent, var(--accent), transparent);
-  opacity:0.3;
-}
-
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:2rem;
-  border-top:1px solid var(--accent-soft);
-  color:var(--muted);
-}
-
-@media(max-width:600px){
-  .hero h2{font-size:2rem}
-}
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 <header>
-  <h1>Dr. Bakir Hussain</h1>
+  <h1>Bakir Hussain</h1>
   <nav>
-    <a href="about.html">About</a>
-    <a href="experience.html">Experience</a>
-    <a href="skills.html">Skills</a>
-    <a href="contact.html">Contact</a>
+    <a href="medical.html">Medical</a>
+    <a href="art.html">Drawings</a>
+    <a href="gardening.html">Gardening</a>
+    <a href="photography.html">Photography</a>
+    <a href="games.html">Game Design</a>
   </nav>
 </header>
 
 <section class="hero">
   <div class="hero-content">
-    <h2>Paediatric & Emergency Medicine</h2>
-    <p>Medical doctor focused on early recognition of deterioration, structured clinical assessment, and safe escalation within multidisciplinary teams.</p>
-    <a href="experience.html" class="cta">View Experience</a>
+    <h2>Ideas, Medicine & Everything Else</h2>
+    <p>A personal space for documenting clinical learning, creative projects, and everything in between.</p>
   </div>
 </section>
 
 <section class="container">
   <div class="grid">
 
-    <div class="card">
-      <h3>Emergency Medicine</h3>
-      <p>Triage, risk assessment, and management of acute presentations including chest pain, dyspnoea, and neurological symptoms.</p>
-    </div>
+    <a href="medical.html" class="card">
+      <h3>Medical</h3>
+      <p>Clinical notes, audits, studies, and reflections from training.</p>
+    </a>
 
-    <div class="card">
-      <h3>Pediatrics</h3>
-      <p>Recognition of clinical deterioration, structured assessment, and appropriate escalation in paediatric patients.</p>
-    </div>
+    <a href="art.html" class="card">
+      <h3>Drawings</h3>
+      <p>Sketches, anatomy drawings, and creative exploration.</p>
+    </a>
 
-    <div class="card">
-      <h3>Clinical Focus</h3>
-      <p>Strong emphasis on patient safety, communication, and teamwork within high-pressure clinical environments.</p>
-    </div>
+    <a href="gardening.html" class="card">
+      <h3>Gardening</h3>
+      <p>Experiments, progress logs, and things that may or may not grow.</p>
+    </a>
+
+    <a href="photography.html" class="card">
+      <h3>Photography</h3>
+      <p>Captured moments, composition practice, and visual ideas.</p>
+    </a>
+
+    <a href="games.html" class="card">
+      <h3>Game Design</h3>
+      <p>Concepts, mechanics, and experimental ideas.</p>
+    </a>
 
   </div>
 </section>
 
 <footer>
-  <p>© 2026 Dr. Bakir Hussain</p>
+  <p>© 2026 Bakir Hussain</p>
 </footer>
+</body>
+</html>
 
+
+<!-- ========================= -->
+<!-- medical.html -->
+<!-- ========================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Medical</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <h1>Medical</h1>
+</header>
+
+<div class="container">
+  <h2>Clinical Work & Learning</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Clinical Diary</h3>
+      <p>Reflections on cases, learning points, and day-to-day experiences.</p>
+    </div>
+    <div class="card">
+      <h3>Audits & Research</h3>
+      <p>Clinical audits, studies, and academic contributions.</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+
+
+<!-- ========================= -->
+<!-- art.html -->
+<!-- ========================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Drawings</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header><h1>Drawings</h1></header>
+<div class="container">
+  <div class="grid">
+    <div class="card"><h3>Sketch 1</h3><p>Description</p></div>
+    <div class="card"><h3>Sketch 2</h3><p>Description</p></div>
+  </div>
+</div>
+</body>
+</html>
+
+
+<!-- ========================= -->
+<!-- gardening.html -->
+<!-- ========================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Gardening</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header><h1>Gardening</h1></header>
+<div class="container">
+  <div class="grid">
+    <div class="card"><h3>Log 1</h3><p>Plant progress</p></div>
+    <div class="card"><h3>Log 2</h3><p>Experiment</p></div>
+  </div>
+</div>
+</body>
+</html>
+
+
+<!-- ========================= -->
+<!-- photography.html -->
+<!-- ========================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Photography</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header><h1>Photography</h1></header>
+<div class="container">
+  <div class="grid">
+    <div class="card"><h3>Photo 1</h3><p>Description</p></div>
+    <div class="card"><h3>Photo 2</h3><p>Description</p></div>
+  </div>
+</div>
+</body>
+</html>
+
+
+<!-- ========================= -->
+<!-- games.html -->
+<!-- ========================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Game Design</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header><h1>Game Design</h1></header>
+<div class="container">
+  <div class="grid">
+    <div class="card"><h3>Idea 1</h3><p>Mechanic concept</p></div>
+    <div class="card"><h3>Idea 2</h3><p>Design notes</p></div>
+  </div>
+</div>
 </body>
 </html>
