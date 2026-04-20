@@ -1,188 +1,200 @@
+<!-- ========================= -->
+<!-- index.html (Premium UI/UX) -->
+<!-- ========================= -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dr. Bakir Hussain MD</title>
-<!-- Import MGS-style font -->
 <link href="https://fonts.cdnfonts.com/css/metal-gear-solid" rel="stylesheet">
+
 <style>
-  /* Reset & Base */
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family:'Roboto', sans-serif; background:#111; color:#eee; scroll-behavior:smooth; }
-  a { color:#00ffcc; text-decoration:none; }
-  a:hover { text-decoration:underline; }
+:root{
+  --bg:#0b0f12;
+  --panel:#11181d;
+  --accent:#00ffcc;
+  --accent-soft:rgba(0,255,204,0.2);
+  --text:#e6f1f1;
+  --muted:#9fb3b3;
+}
 
-  /* MGS4 Font for headings */
-  h1, h2, h3 { font-family:'Metal Gear Solid', sans-serif; text-shadow:0 0 5px #00ffcc; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: radial-gradient(circle at top, #0f1a1f, #070b0d 70%);
+  color:var(--text);
+}
 
-  /* Header */
-  header { position:fixed; top:0; width:100%; background:#000; padding:1rem 2rem; display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #00ffcc; z-index:1000; }
-  header h1 { color:#00ffcc; font-size:2rem; }
-  nav a { margin-left:1.5rem; font-weight:bold; }
+a{color:var(--accent);text-decoration:none}
 
-  /* Hero */
-  .hero { position:relative; height:60vh; display:flex; align-items:center; justify-content:center; text-align:center; overflow:hidden; }
-  .hero img { position:absolute; width:100%; height:100%; object-fit:cover; z-index:0; transform:scale(1.1); animation:zoom 20s infinite alternate; }
-  .hero h2 { position:relative; color:#00ffcc; font-size:3rem; z-index:1; text-shadow:0 0 15px #00ffcc; }
-  @keyframes zoom { 0% {transform:scale(1);} 100% {transform:scale(1.15);} }
+/* NAV */
+header{
+  position:sticky;top:0;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:1rem 2rem;
+  background:rgba(0,0,0,0.7);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--accent-soft);
+}
+header h1{
+  font-family:'Metal Gear Solid';
+  color:var(--accent);
+  font-size:1.6rem;
+  letter-spacing:1px;
+}
+nav a{
+  margin-left:1.5rem;
+  font-size:0.9rem;
+  position:relative;
+}
+nav a::after{
+  content:'';
+  position:absolute;
+  left:0;bottom:-4px;
+  width:0%;height:2px;
+  background:var(--accent);
+  transition:0.3s;
+}
+nav a:hover::after{width:100%}
 
-  /* Sections */
-  main { padding:8rem 2rem 2rem 2rem; max-width:1000px; margin:0 auto; }
-  section { margin-bottom:4rem; opacity:0; transform:translateY(50px); transition: all 1s ease-in-out; border-left:2px solid #00ffcc; padding-left:1rem; }
-  section.active { opacity:1; transform:translateY(0); }
+/* HERO */
+.hero{
+  height:75vh;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;
+  position:relative;
+}
+.hero::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle, transparent, #000 80%);
+}
+.hero-content{
+  position:relative;
+  max-width:700px;
+}
+.hero h2{
+  font-family:'Metal Gear Solid';
+  color:var(--accent);
+  font-size:2.8rem;
+  margin-bottom:1rem;
+}
+.hero p{
+  color:var(--muted);
+  font-size:1rem;
+  line-height:1.6;
+}
+.hero .cta{
+  margin-top:1.5rem;
+  display:inline-block;
+  padding:0.6rem 1.2rem;
+  border:1px solid var(--accent);
+  border-radius:6px;
+  transition:0.3s;
+}
+.hero .cta:hover{
+  background:var(--accent);
+  color:#000;
+  box-shadow:0 0 12px var(--accent);
+}
 
-  h2 { margin-bottom:1rem; font-size:2rem; }
+/* GRID CARDS */
+.container{max-width:1100px;margin:auto;padding:3rem 1.5rem}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:1.5rem;
+}
+.card{
+  background:var(--panel);
+  border:1px solid var(--accent-soft);
+  padding:1.2rem;
+  border-radius:10px;
+  position:relative;
+  transition:0.3s;
+}
+.card:hover{
+  transform:translateY(-5px);
+  border-color:var(--accent);
+  box-shadow:0 0 20px rgba(0,255,204,0.15);
+}
+.card h3{
+  font-family:'Metal Gear Solid';
+  color:var(--accent);
+  font-size:1.2rem;
+  margin-bottom:0.6rem;
+}
+.card p{color:var(--muted);font-size:0.9rem;line-height:1.5}
 
-  /* MGS4 HUD-style Cards */
-  .cards { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:1.5rem; }
-  .card {
-    position:relative;
-    background: rgba(26,26,26,0.9);
-    border: 2px solid #00ffcc;
-    border-radius:8px;
-    padding:1rem;
-    overflow:hidden;
-    cursor:pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  .card::before, .card::after {
-    content: '';
-    position: absolute;
-    border: 2px solid #00ffcc;
-    pointer-events: none;
-  }
-  /* Top-left glowing corner */
-  .card::before {
-    top:0; left:0; width:20px; height:20px;
-    border-right:none; border-bottom:none;
-    box-shadow: 0 0 10px #00ffcc;
-  }
-  /* Bottom-right glowing corner */
-  .card::after {
-    bottom:0; right:0; width:20px; height:20px;
-    border-left:none; border-top:none;
-    box-shadow: 0 0 10px #00ffcc;
-  }
-  .card:hover { transform:scale(1.05); box-shadow:0 0 25px #00ffcc; }
-  .card h3 { color:#00ffcc; margin-bottom:0.5rem; text-shadow:0 0 5px #00ffcc; }
+/* subtle HUD line */
+.card::after{
+  content:'';
+  position:absolute;
+  left:0;bottom:0;
+  width:100%;height:1px;
+  background:linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity:0.3;
+}
 
-  /* Footer */
-  footer { background:#000; padding:1.5rem 2rem; text-align:center; border-top:2px solid #00ffcc; }
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:2rem;
+  border-top:1px solid var(--accent-soft);
+  color:var(--muted);
+}
 
-  @media(max-width:600px){
-    header { flex-direction:column; }
-    nav { margin-top:0.5rem; }
-    .hero h2 { font-size:2rem; padding:0 1rem; }
-  }
+@media(max-width:600px){
+  .hero h2{font-size:2rem}
+}
 </style>
 </head>
-<body>
 
-<!-- Header -->
+<body>
 <header>
-  <h1>Dr. Bakir Hussain MD</h1>
+  <h1>Dr. Bakir Hussain</h1>
   <nav>
-    <a href="#about">About</a>
-    <a href="#education">Education</a>
-    <a href="#experience">Experience</a>
-    <a href="#skills">Skills</a>
-    <a href="#contact">Contact</a>
+    <a href="about.html">About</a>
+    <a href="experience.html">Experience</a>
+    <a href="skills.html">Skills</a>
+    <a href="contact.html">Contact</a>
   </nav>
 </header>
 
-<!-- Hero -->
 <section class="hero">
-  <img src="https://via.placeholder.com/1600x600?text=Medical+Portfolio" alt="Hero Banner">
-  <h2>My website – Professional and not so professional Portfolio!</h2>
+  <div class="hero-content">
+    <h2>Paediatric & Emergency Medicine</h2>
+    <p>Medical doctor focused on early recognition of deterioration, structured clinical assessment, and safe escalation within multidisciplinary teams.</p>
+    <a href="experience.html" class="cta">View Experience</a>
+  </div>
 </section>
 
-<main>
-  <!-- About -->
-  <section id="about">
-    <h2>About Me</h2>
-    <p> I am a Medical Doctor based in Ireland.</p>
-  </section>
+<section class="container">
+  <div class="grid">
 
-  <!-- Education -->
-  <section id="education">
-    <h2>Education & Qualifications</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Medical Degree</h3>
-        <p>Completed supervised internship during medical school. Acquired foundational clinical skills and practical patient care experience.</p>
-      </div>
-      <div class="card">
-        <h3>Certifications</h3>
-        <p>Basic Life Support (BLS), Neonatal Resuscitation Program (NRP), Baby Check guideline proficiency (HSE).</p>
-      </div>
+    <div class="card">
+      <h3>Emergency Medicine</h3>
+      <p>Triage, risk assessment, and management of acute presentations including chest pain, dyspnoea, and neurological symptoms.</p>
     </div>
-  </section>
 
-  <div class="card">
-  <div class="corner tl"></div>
-  <div class="corner tr"></div>
-  <div class="corner bl"></div>
-  <div class="corner br"></div>
-  <h3>Medical Degree</h3>
-  <p>Completed supervised internship during medical school. Acquired foundational clinical skills and practical patient care experience.</p>
-</div>
-
-  <!-- Experience -->
-  <section id="experience">
-    <h2>Clinical Experience</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Emergency Medicine</h3>
-        <p>Assisted in triage, risk management, and assessment of acute presentations including chest pain, shortness of breath, and sudden weakness. Focused on early assessment and escalation under supervision.</p>
-      </div>
-      <div class="card">
-        <h3>Pediatrics</h3>
-        <p>Monitored patients, recognized urgent scenarios, and escalated appropriately. Hands-on experience with neonatal care, feeding assessments, and safety protocols.</p>
-      </div>
-      <div class="card">
-        <h3>Surgery</h3>
-        <p>Assisted with postoperative care, wound closure, and daily surgical ward rounds under supervision.</p>
-      </div>
+    <div class="card">
+      <h3>Pediatrics</h3>
+      <p>Recognition of clinical deterioration, structured assessment, and appropriate escalation in paediatric patients.</p>
     </div>
-  </section>
 
-  <!-- Skills -->
-  <section id="skills">
-    <h2>Skills & Interests</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Clinical Skills</h3>
-        <p>Patient assessment, early escalation, neonatal resuscitation, recognition of acute presentations, and safe hands-on care.</p>
-      </div>
-      <div class="card">
-        <h3>Interests</h3>
-        <p>Paediatric, emergency and neonatal medicine, medical education, and continuous professional development.</p>
-      </div>
+    <div class="card">
+      <h3>Clinical Focus</h3>
+      <p>Strong emphasis on patient safety, communication, and teamwork within high-pressure clinical environments.</p>
     </div>
-  </section>
 
-  <!-- Contact -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:BakirHussain.md@gmail.com">your.email@example.com</a></p>
-  </section>
-</main>
+  </div>
+</section>
 
 <footer>
-  <p>&copy; 2026 Dr. Bakir Hussain | <a href="#contact">Contact</a></p>
+  <p>© 2026 Dr. Bakir Hussain</p>
 </footer>
-
-<script>
-  // Animate sections on scroll
-  const sections = document.querySelectorAll('section');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting) entry.target.classList.add('active');
-    });
-  }, { threshold: 0.1 });
-  sections.forEach(section => observer.observe(section));
-</script>
 
 </body>
 </html>
